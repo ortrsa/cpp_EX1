@@ -100,7 +100,7 @@ TEST_CASE("good input mat with diffrent size") {
 													 ));
 
     /* Test -  8 */
-    CHECK(nospaces(mat(3, 7, '@', '.')) != nospaces("@@@\n"
+    CHECK(nospaces(mat(3, 7, '@', '.')) == nospaces("@@@\n"
 													 "@.@\n"
 													 "@.@\n"
 													 "@.@\n"
@@ -165,5 +165,24 @@ TEST_CASE("diffrent sizes mat ") {
                                                     "@+++++@\n"
                                                     "@@@@@@@"
                                                     ));                                                                                                      
+                                          
+}
+
+TEST_CASE("negetiv mat ") {
+	/* Test -  22 */
+	CHECK_THROWS(mat(-1, 1, '@', '-'));
+
+	/* Test -  23 */
+	CHECK_THROWS(mat(3, -3, '@', '-'));
+
+    /* Test -  24 */
+	CHECK_THROWS(mat(1, -7, '@', '-'));
+
+    /* Test -  25 */
+	CHECK_THROWS(mat(-7, 1, '@', '-'));
+
+    /* Test -  26 */
+	CHECK_THROWS(mat(-2, 3, '@', '+'));
+                                                                                                
                                           
 }
